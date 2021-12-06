@@ -50,7 +50,7 @@ namespace PeriodicReminder {
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
-            var result = MessageBox.Show("Save before closing?", "Reminder", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Are you sure you want to delete this?", "Reminder", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes) {
                 lboReminders.Items.Remove(lboReminders.SelectedItem);
