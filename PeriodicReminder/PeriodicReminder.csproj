@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddReminderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReminderForm.Designer.cs">
+      <DependentUpon>AddReminderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Reminder.cs" />
     <Compile Include="ReminderTextFileConn.cs" />
     <Compile Include="ThingToRemember.cs" />
+    <EmbeddedResource Include="AddReminderForm.resx">
+      <DependentUpon>AddReminderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

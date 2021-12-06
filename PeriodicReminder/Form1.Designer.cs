@@ -29,7 +29,6 @@ namespace PeriodicReminder {
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.lblRemindingStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -63,6 +62,7 @@ namespace PeriodicReminder {
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add Reminder";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -72,6 +72,7 @@ namespace PeriodicReminder {
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete Reminder";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnStart
             // 
@@ -82,16 +83,6 @@ namespace PeriodicReminder {
             this.btnStart.Text = "Start Reminding";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(12, 174);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(110, 23);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStop
             // 
@@ -116,10 +107,9 @@ namespace PeriodicReminder {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 213);
+            this.ClientSize = new System.Drawing.Size(265, 177);
             this.Controls.Add(this.lblRemindingStatus);
             this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -138,7 +128,6 @@ namespace PeriodicReminder {
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblRemindingStatus;
     }

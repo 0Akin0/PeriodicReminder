@@ -41,8 +41,20 @@ namespace PeriodicReminder {
             SwitchReminderActiveMessage(false);
         }
 
-        private void btnReset_Click(object sender, EventArgs e) {
+        private void btnAdd_Click(object sender, EventArgs e) {
+            AddReminderForm addForm = new AddReminderForm();
+            addForm.ShowDialog();
+            if (addForm.NewThingToRemember != null) {
+                lboReminders.Items.Add(addForm.NewThingToRemember);
+            }
+        }
 
+        private void btnDelete_Click(object sender, EventArgs e) {
+            var result = MessageBox.Show("Save before closing?", "Reminder", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes) {
+                lboReminders.Items.Remove(lboReminders.SelectedItem);
+            }
         }
 
         private void SwitchReminderActiveMessage(bool on) {

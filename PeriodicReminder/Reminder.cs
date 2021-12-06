@@ -27,19 +27,14 @@ namespace PeriodicReminder {
             Timer.Stop();
         }
 
-        public void Reset() {
-            Timer.Stop();
-            MinutesPassed = 0;
-        }
-
         private void TimerElapsed(object sender, ElapsedEventArgs e) {
             string message = string.Empty;
             MinutesPassed += 1;
 
             foreach (var item in ThingsToRemember) {
                 if (RemindNow(item)) {
-                    message += $"{item.Name}\n" +
-                        $"    {item.Description}\n";
+                    message += $"Name: {item.Name}\n" +
+                        $"    Description: {item.Description}\n";
                 }
             }
 
@@ -53,7 +48,7 @@ namespace PeriodicReminder {
         }
 
         private void ReminderMessageBox(string message) {
-            System.Windows.Forms.MessageBox.Show(message, "Reminder", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
+            System.Windows.Forms.MessageBox.Show(message, "Reminder", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
 
     }
