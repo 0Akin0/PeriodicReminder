@@ -13,5 +13,9 @@ namespace PeriodicReminder {
         public int GetDurationInSeconds() {
             return DurationMin * 60 * 1000;
         }
+
+        public override string ToString() {
+            return $"{Name};{DurationMin}";
+        }
     }
 }

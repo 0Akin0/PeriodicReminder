@@ -7,22 +7,29 @@ using System.Threading.Tasks;
 
 namespace PeriodicReminder {
     public class ReminderTextFileConn {
-
         private string ReminderPath { get { return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "My Programm Data", "ThingsToRemember.txt"); } }
+
+        public ReminderTextFileConn() {
+            if (!File.Exists(ReminderPath)) {
+                File.WriteAllText(ReminderPath, string.Empty);
+            }
+        }
 
         public List<ThingToRemember> GetThingsToRemember() {
             string[] fileContent = File.ReadAllLines(ReminderPath);
             List<ThingToRemember> thingsToRemember = new List<ThingToRemember>();
 
             foreach (var line in fileContent) {
-                string[] items = line.Split(';');
-                ThingToRemember thing = new ThingToRemember {
-                    Name = items[0],
-                    Description = items[1],
-                    DurationMin = int.Parse(items[2])
-                };
+                if (!string.IsNullOrEmpty(line)) {
+                    string[] items = line.Split(';');
+                    ThingToRemember thing = new ThingToRemember {
+                        Name = items[0],
+                        Description = items[1],
+                        DurationMin = int.Parse(items[2])
+                    };
 
-                thingsToRemember.Add(thing);
+                    thingsToRemember.Add(thing);
+                }
             }
 
             return thingsToRemember;

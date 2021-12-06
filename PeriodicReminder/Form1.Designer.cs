@@ -50,14 +50,14 @@ namespace PeriodicReminder {
             "este",
             "setf",
             "stes"});
-            this.lboReminders.Location = new System.Drawing.Point(129, 12);
+            this.lboReminders.Location = new System.Drawing.Point(13, 12);
             this.lboReminders.Name = "lboReminders";
             this.lboReminders.Size = new System.Drawing.Size(120, 95);
             this.lboReminders.TabIndex = 1;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 13);
+            this.btnAdd.Location = new System.Drawing.Point(139, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(110, 23);
             this.btnAdd.TabIndex = 2;
@@ -66,7 +66,7 @@ namespace PeriodicReminder {
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(13, 43);
+            this.btnDelete.Location = new System.Drawing.Point(139, 42);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 23);
             this.btnDelete.TabIndex = 3;
@@ -81,6 +81,7 @@ namespace PeriodicReminder {
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start Reminding";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnReset
             // 
@@ -90,6 +91,7 @@ namespace PeriodicReminder {
             this.btnReset.TabIndex = 5;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStop
             // 
@@ -99,6 +101,7 @@ namespace PeriodicReminder {
             this.btnStop.TabIndex = 6;
             this.btnStop.Text = "Stop Reminding";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // lblRemindingStatus
             // 
