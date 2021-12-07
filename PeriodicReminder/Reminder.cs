@@ -32,10 +32,6 @@ namespace PeriodicReminder {
             short ranking = 1;
             MinutesPassed += 1;
 
-            if (ThingsToRemember.Count>0) {
-                message += "Don't forget to:\n";
-            }
-
             foreach (var item in ThingsToRemember) {
                 if (RemindNow(item)) {
                     message += $"{ranking}. {item.Name}\n";
@@ -48,6 +44,7 @@ namespace PeriodicReminder {
             }
 
             if (!string.IsNullOrEmpty(message)) {
+                message = "Don't forget to:\n" + message;
                 ReminderMessageBox(message);
             }
         }
