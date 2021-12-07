@@ -29,12 +29,21 @@ namespace PeriodicReminder {
 
         private void TimerElapsed(object sender, ElapsedEventArgs e) {
             string message = string.Empty;
+            short ranking = 1;
             MinutesPassed += 1;
+
+            if (ThingsToRemember.Count>0) {
+                message += "Don't forget to:\n";
+            }
 
             foreach (var item in ThingsToRemember) {
                 if (RemindNow(item)) {
-                    message += $"Name: {item.Name}\n" +
-                        $"    Description: {item.Description}\n";
+                    message += $"{ranking}. {item.Name}\n";
+                    if (!string.IsNullOrEmpty(item.Description)) {
+                        message += $"           {item.Description}\n";
+                    }
+                    message += "\n";
+                    ranking++;
                 }
             }
 

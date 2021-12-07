@@ -63,6 +63,11 @@ namespace PeriodicReminder {
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e) {
+            Conn.SaveThingsToRemember(GetThingsToRememberFromListBox());
+            Dirty = false;
+        }
+
         private void SwitchReminderActiveMessage(bool on) {
             string status = on ? "On" : "Off";
             lblRemindingStatus.Text = $"Reminding is {status}";

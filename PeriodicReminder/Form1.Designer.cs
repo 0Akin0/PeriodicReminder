@@ -31,6 +31,7 @@ namespace PeriodicReminder {
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.lblRemindingStatus = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lboReminders
@@ -103,11 +104,22 @@ namespace PeriodicReminder {
             this.lblRemindingStatus.TabIndex = 7;
             this.lblRemindingStatus.Text = "Reminding is off";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(139, 84);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(110, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(265, 177);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblRemindingStatus);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
@@ -130,6 +142,7 @@ namespace PeriodicReminder {
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblRemindingStatus;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 
