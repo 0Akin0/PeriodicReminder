@@ -66,7 +66,7 @@ namespace PeriodicReminder {
             this.btnAdd.Location = new System.Drawing.Point(14, 87);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -76,7 +76,7 @@ namespace PeriodicReminder {
             this.btnCancel.Location = new System.Drawing.Point(95, 87);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -86,21 +86,21 @@ namespace PeriodicReminder {
             this.txtName.Location = new System.Drawing.Point(84, 10);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 3;
             // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(84, 34);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(100, 20);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 4;
             // 
             // txtTime
             // 
             this.txtTime.Location = new System.Drawing.Point(84, 59);
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(100, 20);
-            this.txtTime.TabIndex = 7;
+            this.txtTime.TabIndex = 5;
             // 
             // AddReminderForm
             // 

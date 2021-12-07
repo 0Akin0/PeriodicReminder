@@ -53,14 +53,14 @@ namespace PeriodicReminder {
             this.lboReminders.Location = new System.Drawing.Point(13, 12);
             this.lboReminders.Name = "lboReminders";
             this.lboReminders.Size = new System.Drawing.Size(120, 95);
-            this.lboReminders.TabIndex = 1;
+            this.lboReminders.TabIndex = 0;
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(139, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(110, 23);
-            this.btnAdd.TabIndex = 2;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add Reminder";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -70,7 +70,7 @@ namespace PeriodicReminder {
             this.btnDelete.Location = new System.Drawing.Point(139, 42);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 23);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete Reminder";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -90,7 +90,7 @@ namespace PeriodicReminder {
             this.btnStop.Location = new System.Drawing.Point(13, 145);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(110, 23);
-            this.btnStop.TabIndex = 6;
+            this.btnStop.TabIndex = 5;
             this.btnStop.Text = "Stop Reminding";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -101,7 +101,7 @@ namespace PeriodicReminder {
             this.lblRemindingStatus.Location = new System.Drawing.Point(126, 116);
             this.lblRemindingStatus.Name = "lblRemindingStatus";
             this.lblRemindingStatus.Size = new System.Drawing.Size(82, 13);
-            this.lblRemindingStatus.TabIndex = 7;
+            this.lblRemindingStatus.TabIndex = 6;
             this.lblRemindingStatus.Text = "Reminding is off";
             // 
             // btnSave
@@ -109,7 +109,7 @@ namespace PeriodicReminder {
             this.btnSave.Location = new System.Drawing.Point(139, 84);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 23);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
