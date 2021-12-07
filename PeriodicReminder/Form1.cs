@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace PeriodicReminder {
     public partial class Form1 : Form {
+        bool Dirty = false;
         Reminder Reminder;
         ReminderTextFileConn Conn = new ReminderTextFileConn();
 
@@ -20,12 +21,14 @@ namespace PeriodicReminder {
         }
 
         protected override void OnClosing(CancelEventArgs e) {
-            var result = MessageBox.Show("Save before closing?", "Reminder", MessageBoxButtons.YesNoCancel);
+            if (Dirty) {
+                var result = MessageBox.Show("Save before closing?", "Reminder", MessageBoxButtons.YesNoCancel);
 
-            if (result == DialogResult.Yes) {
-                Conn.SaveThingsToRemember(GetThingsToRememberFromListBox());
-            } else if (result == DialogResult.Cancel) {
-                e.Cancel = true;
+                if (result == DialogResult.Yes) {
+                    Conn.SaveThingsToRemember(GetThingsToRememberFromListBox());
+                } else if (result == DialogResult.Cancel) {
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -44,8 +47,10 @@ namespace PeriodicReminder {
         private void btnAdd_Click(object sender, EventArgs e) {
             AddReminderForm addForm = new AddReminderForm();
             addForm.ShowDialog();
+
             if (addForm.NewThingToRemember != null) {
                 lboReminders.Items.Add(addForm.NewThingToRemember);
+                Dirty = true;
             }
         }
 
@@ -54,11 +59,12 @@ namespace PeriodicReminder {
 
             if (result == DialogResult.Yes) {
                 lboReminders.Items.Remove(lboReminders.SelectedItem);
+                Dirty = true;
             }
         }
 
         private void SwitchReminderActiveMessage(bool on) {
-            string status = on ? "On": "Off";
+            string status = on ? "On" : "Off";
             lblRemindingStatus.Text = $"Reminding is {status}";
         }
 
