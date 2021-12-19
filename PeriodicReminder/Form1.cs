@@ -45,12 +45,25 @@ namespace PeriodicReminder {
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            AddReminderForm addForm = new AddReminderForm();
+            ReminderForm addForm = new ReminderForm();
             addForm.ShowDialog();
 
             if (addForm.NewThingToRemember != null) {
                 lboReminders.Items.Add(addForm.NewThingToRemember);
                 Dirty = true;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e) {
+            if (lboReminders.SelectedItem != null) {
+                ReminderForm editForm = new ReminderForm(lboReminders.SelectedItem as ThingToRemember);
+                editForm.ShowDialog();
+
+                if (editForm.NewThingToRemember != null) {
+                    lboReminders.Items.RemoveAt(lboReminders.SelectedIndex);
+                    lboReminders.Items.Add(editForm.NewThingToRemember);
+                    Dirty = true;
+                }
             }
         }
 

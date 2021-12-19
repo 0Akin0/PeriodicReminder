@@ -32,6 +32,7 @@ namespace PeriodicReminder {
             this.btnStop = new System.Windows.Forms.Button();
             this.lblRemindingStatus = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lboReminders
@@ -52,7 +53,7 @@ namespace PeriodicReminder {
             "stes"});
             this.lboReminders.Location = new System.Drawing.Point(13, 12);
             this.lboReminders.Name = "lboReminders";
-            this.lboReminders.Size = new System.Drawing.Size(120, 95);
+            this.lboReminders.Size = new System.Drawing.Size(120, 121);
             this.lboReminders.TabIndex = 0;
             // 
             // btnAdd
@@ -67,7 +68,7 @@ namespace PeriodicReminder {
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(139, 42);
+            this.btnDelete.Location = new System.Drawing.Point(139, 70);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 23);
             this.btnDelete.TabIndex = 2;
@@ -77,7 +78,7 @@ namespace PeriodicReminder {
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(13, 116);
+            this.btnStart.Location = new System.Drawing.Point(13, 146);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(110, 23);
             this.btnStart.TabIndex = 4;
@@ -87,7 +88,7 @@ namespace PeriodicReminder {
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(13, 145);
+            this.btnStop.Location = new System.Drawing.Point(13, 175);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(110, 23);
             this.btnStop.TabIndex = 5;
@@ -98,7 +99,7 @@ namespace PeriodicReminder {
             // lblRemindingStatus
             // 
             this.lblRemindingStatus.AutoSize = true;
-            this.lblRemindingStatus.Location = new System.Drawing.Point(126, 116);
+            this.lblRemindingStatus.Location = new System.Drawing.Point(126, 146);
             this.lblRemindingStatus.Name = "lblRemindingStatus";
             this.lblRemindingStatus.Size = new System.Drawing.Size(82, 13);
             this.lblRemindingStatus.TabIndex = 6;
@@ -106,7 +107,7 @@ namespace PeriodicReminder {
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(139, 84);
+            this.btnSave.Location = new System.Drawing.Point(139, 113);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 23);
             this.btnSave.TabIndex = 3;
@@ -114,11 +115,22 @@ namespace PeriodicReminder {
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(139, 41);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(110, 23);
+            this.btnEdit.TabIndex = 7;
+            this.btnEdit.Text = "Edit Reminder";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 177);
+            this.ClientSize = new System.Drawing.Size(279, 207);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblRemindingStatus);
             this.Controls.Add(this.btnStop);
@@ -143,6 +155,7 @@ namespace PeriodicReminder {
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblRemindingStatus;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 
