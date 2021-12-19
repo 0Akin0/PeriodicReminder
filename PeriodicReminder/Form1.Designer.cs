@@ -107,7 +107,7 @@ namespace PeriodicReminder {
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(139, 113);
+            this.btnSave.Location = new System.Drawing.Point(139, 110);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 23);
             this.btnSave.TabIndex = 3;

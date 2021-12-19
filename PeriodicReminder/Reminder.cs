@@ -54,7 +54,8 @@ namespace PeriodicReminder {
         }
 
         private void ReminderMessageBox(string message) {
-            System.Windows.Forms.MessageBox.Show(message, "Reminder", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            ReminderForm.Open(message);
+            //System.Windows.Forms.MessageBox.Show(message, "Reminder", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
 
     }
