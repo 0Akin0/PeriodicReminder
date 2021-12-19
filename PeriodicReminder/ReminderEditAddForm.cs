@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PeriodicReminder {
-    public partial class ReminderForm : Form {
+    public partial class ReminderEditAddForm : Form {
         public ThingToRemember OldThingToRemember { get; set; }
         public ThingToRemember NewThingToRemember { get; set; }
 
-        public ReminderForm() {
+        public ReminderEditAddForm() {
             InitializeComponent();
         }
 
-        public ReminderForm(ThingToRemember old) : this() {
+        public ReminderEditAddForm(ThingToRemember old) : this() {
             OldThingToRemember = old;
         }
 

@@ -45,7 +45,7 @@ namespace PeriodicReminder {
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            ReminderForm addForm = new ReminderForm();
+            ReminderEditAddForm addForm = new ReminderEditAddForm();
             addForm.ShowDialog();
 
             if (addForm.NewThingToRemember != null) {
@@ -56,7 +56,7 @@ namespace PeriodicReminder {
 
         private void btnEdit_Click(object sender, EventArgs e) {
             if (lboReminders.SelectedItem != null) {
-                ReminderForm editForm = new ReminderForm(lboReminders.SelectedItem as ThingToRemember);
+                ReminderEditAddForm editForm = new ReminderEditAddForm(lboReminders.SelectedItem as ThingToRemember);
                 editForm.ShowDialog();
 
                 if (editForm.NewThingToRemember != null) {

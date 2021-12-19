@@ -1,6 +1,6 @@
 ﻿
 namespace PeriodicReminder {
-    partial class ReminderForm {
+    partial class ReminderEditAddForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
