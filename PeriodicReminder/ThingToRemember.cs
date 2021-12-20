@@ -9,6 +9,7 @@ namespace PeriodicReminder {
         public string Name { get; set; }
         public string Description { get; set; }
         public int DurationMin { get; set; }
+        public bool Disabled { get; set; }
 
         public int GetDurationInSeconds() {
             return DurationMin * 60 * 1000;

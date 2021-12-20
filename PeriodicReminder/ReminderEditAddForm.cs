@@ -22,23 +22,31 @@ namespace PeriodicReminder {
         }
 
         private void AddReminderForm_Load(object sender, EventArgs e) {
-            if (OldThingToRemember!=null) {
+            if (OldThingToRemember != null) {
                 txtName.Text = OldThingToRemember.Name;
                 txtDescription.Text = OldThingToRemember.Description;
                 txtTime.Text = OldThingToRemember.DurationMin.ToString();
+                chbDisabled.Checked = OldThingToRemember.Disabled;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            NewThingToRemember = new ThingToRemember();
-            NewThingToRemember.Name = txtName.Text;
-            NewThingToRemember.Description = txtDescription.Text;
-            NewThingToRemember.DurationMin = int.Parse(txtTime.Text);
-            Close();
+            if (ValidEntry()) {
+                NewThingToRemember = new ThingToRemember();
+                NewThingToRemember.Name = txtName.Text;
+                NewThingToRemember.Description = txtDescription.Text;
+                NewThingToRemember.DurationMin = int.Parse(txtTime.Text);
+                NewThingToRemember.Disabled = chbDisabled.Checked;
+                Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private bool ValidEntry() {
+            return !string.IsNullOrWhiteSpace(txtName.Text) && !string.IsNullOrWhiteSpace(txtTime.Text);
         }
     }
 }

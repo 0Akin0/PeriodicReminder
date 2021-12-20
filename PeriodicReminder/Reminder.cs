@@ -50,12 +50,11 @@ namespace PeriodicReminder {
         }
 
         private bool RemindNow(ThingToRemember thing) {
-            return MinutesPassed % thing.DurationMin == 0;
+            return MinutesPassed % thing.DurationMin == 0 && !thing.Disabled;
         }
 
         private void ReminderMessageBox(string message) {
             ReminderForm.Open(message);
-            //System.Windows.Forms.MessageBox.Show(message, "Reminder", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
 
     }

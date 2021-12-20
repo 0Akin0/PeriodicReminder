@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace PeriodicReminder {
     public class ReminderTextFileConn {
+        const int NameIndexInFile = 0;
+        const int DescriptionIndexInFile = 1;
+        const int DurationIndexInFile = 2;
+        const int DisabledIndexInFile = 3;
         private string ReminderPath { get { return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "My Programm Data", "ThingsToRemember.txt"); } }
 
         public ReminderTextFileConn() {
@@ -23,9 +27,10 @@ namespace PeriodicReminder {
                 if (!string.IsNullOrEmpty(line)) {
                     string[] items = line.Split(';');
                     ThingToRemember thing = new ThingToRemember {
-                        Name = items[0],
-                        Description = items[1],
-                        DurationMin = int.Parse(items[2])
+                        Name = items[NameIndexInFile],
+                        Description = items[DescriptionIndexInFile],
+                        DurationMin = int.Parse(items[DurationIndexInFile]),
+                        Disabled = bool.Parse(items[DisabledIndexInFile])
                     };
 
                     thingsToRemember.Add(thing);
@@ -39,7 +44,7 @@ namespace PeriodicReminder {
             string fileContent = string.Empty;
 
             foreach (var item in thingsToRemember) {
-                fileContent += $"{item.Name};{item.Description};{item.DurationMin}\n";
+                fileContent += $"{item.Name};{item.Description};{item.DurationMin};{item.Disabled}\n";
             }
 
             File.WriteAllText(ReminderPath, fileContent);
