@@ -36,7 +36,7 @@ namespace PeriodicReminder {
                 if (RemindNow(item)) {
                     message += $"{ranking}. {item.Name}\n";
                     if (!string.IsNullOrEmpty(item.Description)) {
-                        message += $"           {item.Description}\n";
+                        message += FormatDescription(item.Description);
                     }
                     message += "\n";
                     ranking++;
@@ -55,6 +55,22 @@ namespace PeriodicReminder {
 
         private void ReminderMessageBox(string message) {
             ReminderForm.Open(message);
+        }
+
+        private string FormatDescription(string description) {
+            string formated = string.Empty;
+            int maxCharsPerLine = 35;
+            List<string> lines = ChunksUpto(description, maxCharsPerLine).ToList();
+
+            foreach (var line in lines) {
+                formated += $"           {line}\n";
+            }
+
+            return formated;
+        }
+        static IEnumerable<string> ChunksUpto(string str, int maxChunkSize) {
+            for (int i = 0; i < str.Length; i += maxChunkSize)
+                yield return str.Substring(i, Math.Min(maxChunkSize, str.Length - i));
         }
 
     }
