@@ -32,6 +32,7 @@ namespace PeriodicReminder {
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
+            this.chbDisabled = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@ namespace PeriodicReminder {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 62);
+            this.label3.Location = new System.Drawing.Point(13, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
@@ -63,7 +64,7 @@ namespace PeriodicReminder {
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(14, 87);
+            this.btnAdd.Location = new System.Drawing.Point(12, 169);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 6;
@@ -73,7 +74,7 @@ namespace PeriodicReminder {
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(95, 87);
+            this.btnCancel.Location = new System.Drawing.Point(93, 169);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -91,22 +92,34 @@ namespace PeriodicReminder {
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(84, 34);
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(100, 20);
+            this.txtDescription.Size = new System.Drawing.Size(159, 80);
             this.txtDescription.TabIndex = 4;
             // 
             // txtTime
             // 
-            this.txtTime.Location = new System.Drawing.Point(84, 59);
+            this.txtTime.Location = new System.Drawing.Point(84, 120);
             this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(100, 20);
+            this.txtTime.Size = new System.Drawing.Size(67, 20);
             this.txtTime.TabIndex = 5;
             // 
-            // AddReminderForm
+            // chbDisabled
+            // 
+            this.chbDisabled.AutoSize = true;
+            this.chbDisabled.Location = new System.Drawing.Point(16, 146);
+            this.chbDisabled.Name = "chbDisabled";
+            this.chbDisabled.Size = new System.Drawing.Size(67, 17);
+            this.chbDisabled.TabIndex = 8;
+            this.chbDisabled.Text = "Disabled";
+            this.chbDisabled.UseVisualStyleBackColor = true;
+            // 
+            // ReminderEditAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(206, 128);
+            this.ClientSize = new System.Drawing.Size(257, 204);
+            this.Controls.Add(this.chbDisabled);
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtName);
@@ -115,7 +128,7 @@ namespace PeriodicReminder {
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddReminderForm";
+            this.Name = "ReminderEditAddForm";
             this.Text = "Add";
             this.Load += new System.EventHandler(this.AddReminderForm_Load);
             this.ResumeLayout(false);
@@ -133,5 +146,6 @@ namespace PeriodicReminder {
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.CheckBox chbDisabled;
     }
 }
