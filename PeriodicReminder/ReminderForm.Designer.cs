@@ -30,7 +30,9 @@ namespace PeriodicReminder {
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.Black;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
             this.lblMessage.Location = new System.Drawing.Point(12, 9);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(99, 25);
